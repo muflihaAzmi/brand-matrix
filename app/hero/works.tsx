@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { MoveRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+
 
 /* =======================
    DATA
@@ -93,6 +95,8 @@ const cardVariant: Variants = {
 ======================= */
 
 function Works() {
+  const router = useRouter();
+
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
@@ -105,7 +109,7 @@ function Works() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gray-700 text-white w-full h-[220vh] px-6 md:px-10"
+      className="relative bg-gray-900 text-white w-full h-[220vh] px-6 md:px-10"
     >
       {/* 🔹 HEADING */}
       <motion.div
@@ -127,28 +131,30 @@ function Works() {
           projects.
         </motion.p>
 
-        <motion.button
-          variants={headingItem}
-          className="
-            group inline-flex items-center gap-2
-            rounded-xl
-            bg-white text-black
-            hover:bg-gray-400 hover:text-white
-            px-5 py-2.5
-            transition-colors duration-300
-            shadow-sm mt-4
-          "
-        >
-          <span className="font-medium">View Works</span>
-          <MoveRight
-            className="
-              w-4 h-4
-              opacity-0 -translate-x-1
-              group-hover:opacity-100 group-hover:translate-x-1
-              transition-all duration-300
-            "
-          />
-        </motion.button>
+       <motion.button
+  variants={headingItem}
+  onClick={() => router.push("/works")}
+  className="
+    group inline-flex items-center gap-2
+    rounded-xl
+    bg-white text-black
+    hover:bg-gray-400 hover:text-white
+    px-5 py-2.5
+    transition-colors duration-300
+    shadow-sm mt-4
+  "
+>
+  <span className="font-medium">View Works</span>
+  <MoveRight
+    className="
+      w-4 h-4
+      opacity-0 -translate-x-1
+      group-hover:opacity-100 group-hover:translate-x-1
+      transition-all duration-300
+    "
+  />
+</motion.button>
+
       </motion.div>
 
       {/* 🔹 HORIZONTAL SCROLL */}

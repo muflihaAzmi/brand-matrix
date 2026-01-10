@@ -35,34 +35,59 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-14 text-black text-[16px] font-medium">
-          <Link href="/">HOME</Link>
-          <Link href="/services">SERVICES</Link>
-          <Link href="/works">WORKS</Link>
-          <Link href="/blogs">BLOGS</Link>
+      <div className="hidden md:flex items-center gap-14 text-black text-[16px] font-medium">
+  <Link
+    href="/"
+    className="border-b-2 border-transparent hover:border-black transition-all duration-200"
+  >
+    HOME
+  </Link>
 
-          <button
-            className="
-              group inline-flex items-center gap-2
-              rounded-xl border border-black
-              bg-black text-white
-              hover:bg-white hover:text-black
-              px-5 py-2.5
-              transition-colors duration-300
-              shadow-sm
-            "
-          >
-            <span className="font-medium">CONTACT US</span>
-            <MoveRight
-              className="
-                w-4 h-4
-                opacity-0 -translate-x-1
-                group-hover:opacity-100 group-hover:translate-x-1
-                transition-all duration-300
-              "
-            />
-          </button>
-        </div>
+  <Link
+    href="/services"
+    className="border-b-2 border-transparent hover:border-black transition-all duration-200"
+  >
+    SERVICES
+  </Link>
+
+  <Link
+    href="/works"
+    className="border-b-2 border-transparent hover:border-black transition-all duration-200"
+  >
+    WORKS
+  </Link>
+
+  <Link
+  href="/blogs"
+  className="border-b-2 border-transparent hover:border-black transition-all duration-300 ease-in-out"
+>
+  BLOGS
+</Link>
+
+
+  <button
+    className="
+      group inline-flex items-center gap-2
+      rounded-xl border border-black
+      bg-black text-white
+      hover:bg-white hover:text-black
+      px-5 py-2.5
+      transition-all duration-300
+      shadow-sm
+    "
+  >
+    <span className="font-medium">CONTACT US</span>
+    <MoveRight
+      className="
+        w-4 h-4
+        opacity-0 -translate-x-1
+        group-hover:opacity-100 group-hover:translate-x-1
+        transition-all duration-300
+      "
+    />
+  </button>
+</div>
+
 
         {/* Mobile Menu Button */}
         <button

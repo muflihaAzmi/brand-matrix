@@ -86,13 +86,10 @@ const blogItem: Variants = {
   },
 };
 
-/* =======================
-   COMPONENT
-======================= */
 
 function Blogs() {
   return (
-    <section className="bg-gray-700 py-20 px-6 md:px-10 flex flex-col md:flex-row gap-16">
+    <section className="bg-white py-20 px-6 md:px-20 flex flex-col md:flex-row gap-16">
       
       {/* 🔹 LEFT CONTENT */}
       <motion.div
@@ -104,21 +101,21 @@ function Blogs() {
       >
         <motion.span
           variants={leftItem}
-          className="text-gray-100 uppercase text-sm tracking-wider"
+          className="text-gray-700 uppercase text-sm tracking-wider"
         >
           Blogs
         </motion.span>
 
         <motion.h2
           variants={leftItem}
-          className="text-3xl text-white tracking-tight"
+          className="text-3xl text-black tracking-tight"
         >
           Insights From Our Digital Team
         </motion.h2>
 
         <motion.p
           variants={leftItem}
-          className="max-w-xl text-gray-100"
+          className="max-w-xl text-gray-700"
         >
           Thoughtful articles on branding, marketing, and digital growth.
         </motion.p>
@@ -128,7 +125,7 @@ function Blogs() {
           className="
             group inline-flex items-center gap-3
             rounded-xl
-            bg-white text-black
+            bg-gray-700 text-white
             hover:bg-gray-400 hover:text-white
             px-5 py-2.5
             transition-colors duration-300
@@ -157,7 +154,7 @@ function Blogs() {
       >
         {blogs.map((blog, index) => (
           <motion.div key={index} variants={blogItem}>
-            <Collapsible className="bg-white rounded-xl border border-gray-200 p-4">
+            <Collapsible className="bg-gray-700 text-white rounded-xl border border-gray-200 p-4">
               <CollapsibleTrigger className="w-full text-left font-medium text-lg flex justify-between items-center">
                 {blog.title}
                 <span className="text-gray-400 ml-6">+</span>

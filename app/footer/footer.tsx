@@ -28,8 +28,8 @@ function Footer() {
     },
   ];
   return (
-    <footer className="w-full bg-black text-white">
-      <div className=" mx-auto md:px-18 px-5 py-16">
+    <footer className="w-full bg-black text-white border-t">
+      <div className=" mx-auto max-w-7xl px-5 py-16">
         {/* Main Grid */}
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Brand Section */}
@@ -52,7 +52,7 @@ function Footer() {
         w-10 h-10 flex items-center justify-center
         rounded-full border border-gray-600
         text-gray-300
-        hover:bg-red-600 hover:border-red-600 hover:text-white
+        hover:bg-gray-400 hover:border-gray-800 hover:text-white
         transition-all duration-300
       "
                 >
@@ -67,21 +67,21 @@ function Footer() {
             {/* Contact Info */}
             <div className="flex flex-col gap-4 text-gray-300">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800">
+                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-400  transition-all duration-300">
                   <MapPin size={16} />
                 </div>
                 <span>Manjeri, Calicut</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800">
+                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-400  transition-all duration-300">
                   <Mail size={16} />
                 </div>
                 <span>BrandMatrix.agency@gmail.com</span>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800">
+                <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-400  transition-all duration-300">
                   <Phone size={16} />
                 </div>
                 <span>92071 28680</span>
@@ -105,7 +105,7 @@ function Footer() {
                   href={link.href}
                   className="
                     text-gray-400
-                    hover:text-red-600
+                    hover:text-gray-700
                     transition-colors duration-300
                   "
                 >

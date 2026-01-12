@@ -24,7 +24,6 @@ const testimonials = [
 ];
 
 
-/* Heading */
 const headingContainer: Variants = {
   hidden: {},
   visible: {
@@ -69,7 +68,6 @@ const gridItem: Variants = {
   },
 };
 
-/* CTA */
 const ctaVariant: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -82,9 +80,6 @@ const ctaVariant: Variants = {
   },
 };
 
-/* =======================
-   COMPONENT
-======================= */
 
 function VideoTestimonials() {
   return (
@@ -120,7 +115,6 @@ function VideoTestimonials() {
         </motion.p>
       </motion.div>
 
-      {/* 🔹 VIDEO GRID */}
       <motion.div
         variants={gridContainer}
         initial="hidden"
@@ -155,7 +149,6 @@ function VideoTestimonials() {
         ))}
       </motion.div>
 
-      {/* 🔹 CTA */}
       <motion.section
         variants={ctaVariant}
         initial="hidden"

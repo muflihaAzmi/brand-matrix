@@ -30,7 +30,6 @@ function Footer() {
   return (
     <footer className="w-full bg-black text-white border-t">
       <div className=" mx-auto max-w-7xl px-5 py-16">
-        {/* Main Grid */}
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Brand Section */}
           <div className="flex flex-col gap-4 max-w-sm">
@@ -40,7 +39,6 @@ function Footer() {
               digital innovation.
             </p>
 
-            {/* Social Icons */}
             <div className="flex gap-4 mt-2">
               {socials.map(({ href, icon: Icon, label }) => (
                 <Link
@@ -62,7 +60,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Contact + Links */}
           <div className="flex flex-col md:flex-row gap-12">
             {/* Contact Info */}
             <div className="flex flex-col gap-4 text-gray-300">
@@ -88,7 +85,6 @@ function Footer() {
               </div>
             </div>
 
-            {/* Quick Links */}
             <div className="flex flex-col gap-3">
               <span className="text-lg font-semibold text-white">
                 Quick Links
@@ -116,7 +112,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom Line */}
         <div className="border-t border-gray-800 mt-12 pt-6 text-sm text-gray-500 text-center">
           © {new Date().getFullYear()} Brand Matrix Agency. All rights reserved.
         </div>

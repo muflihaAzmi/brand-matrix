@@ -9,7 +9,7 @@ import Blogs from "./hero/blogs";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="mx-auto container">
       <Hero/>
       <Offer/>
       <Clients/>

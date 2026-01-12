@@ -19,8 +19,8 @@ const leftItem: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6, // longer = smoother
-      ease: [0.22, 1, 0.36, 1], // premium easing
+      duration: 0.6, 
+      ease: [0.22, 1, 0.36, 1], 
     },
   },
 };
@@ -33,8 +33,8 @@ const RightItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6, // longer = smoother
-      ease: [0.22, 1, 0.36, 1], // premium easing
+      duration: 0.6, 
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -43,7 +43,7 @@ const leftContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.25, // slower flow
+      staggerChildren: 0.25, 
       delayChildren: 0.2,
     },
   },

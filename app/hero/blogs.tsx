@@ -9,9 +9,7 @@ import {
 import { MoveRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
-/* =======================
-   DATA
-======================= */
+
 
 const blogs = [
   {
@@ -36,9 +34,7 @@ const blogs = [
   },
 ];
 
-/* =======================
-   ANIMATIONS
-======================= */
+
 
 /* Left content */
 const leftContainer: Variants = {
@@ -144,7 +140,6 @@ function Blogs() {
         </motion.button>
       </motion.div>
 
-      {/* 🔹 BLOG LIST */}
       <motion.div
         variants={blogContainer}
         initial="hidden"

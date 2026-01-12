@@ -1,18 +1,16 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Playfair_Display } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { motion, useInView } from "framer-motion";
 
-const playfair = Playfair_Display({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
 });
 
-/* =======================
-   DATA
-======================= */
+
 
 const client = [
   {
@@ -35,9 +33,7 @@ const client = [
   },
 ];
 
-/* =======================
-   COUNT FROM MIDDLE (SCROLL ONLY)
-======================= */
+
 
 function useCountUp(target: number, start: boolean) {
   const [count, setCount] = useState<number | null>(null);
@@ -105,7 +101,7 @@ function Clients() {
                 {item.title}
               </span>
 
-              <h2 className={`text-6xl font-bold mt-4 ${playfair.className}`}>
+              <h2 className={`text-6xl font-bold mt-4 ${manrope.className}`}>
                 {count !== null ? count : ""}
                 {item.suffix}
               </h2>

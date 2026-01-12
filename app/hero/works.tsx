@@ -7,9 +7,7 @@ import { MoveRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 
-/* =======================
-   DATA
-======================= */
+
 
 const works = [
   {
@@ -48,11 +46,12 @@ const works = [
     description:
       "Create powerful habits in just 21 days. Daily actions that lead to extraordinary results, powered by Success Way.",
   },
+ 
+
+
+
 ];
 
-/* =======================
-   ANIMATIONS
-======================= */
 
 /* Heading flow */
 const headingContainer: Variants = {
@@ -77,7 +76,6 @@ const headingItem: Variants = {
   },
 };
 
-/* Card reveal */
 const cardVariant: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -90,9 +88,6 @@ const cardVariant: Variants = {
   },
 };
 
-/* =======================
-   COMPONENT
-======================= */
 
 function Works() {
   const router = useRouter();
@@ -111,7 +106,6 @@ function Works() {
       ref={sectionRef}
       className="relative bg-gray-900 text-white w-full h-[220vh] px-6 md:px-10"
     >
-      {/* 🔹 HEADING */}
       <motion.div
         variants={headingContainer}
         initial="hidden"
@@ -158,7 +152,7 @@ function Works() {
       </motion.div>
 
       {/* 🔹 HORIZONTAL SCROLL */}
-      <div className="sticky top-0 h-[500px] flex items-center overflow-hidden">
+      <div className="sticky top-0 h-125 flex items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-10 mt-20">
           {works.map((item, index) => (
             <motion.div
@@ -167,7 +161,7 @@ function Works() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, margin: "-120px" }}
-              className="min-w-[420px]"
+              className="min-w-105"
               whileHover={{ y: -8 }}
               transition={{
                 type: "spring",
@@ -175,7 +169,7 @@ function Works() {
                 damping: 18,
               }}
             >
-              <div className="relative h-[260px] rounded-2xl overflow-hidden">
+              <div className="relative h-65 rounded-2xl overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}

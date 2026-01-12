@@ -40,28 +40,28 @@ export default function Navbar() {
     href="/"
     className="border-b-2 border-transparent hover:border-black transition-all duration-200"
   >
-    HOME
+    Home
   </Link>
 
   <Link
     href="/services"
     className="border-b-2 border-transparent hover:border-black transition-all duration-200"
   >
-    SERVICES
+    Services
   </Link>
 
   <Link
     href="/works"
     className="border-b-2 border-transparent hover:border-black transition-all duration-200"
   >
-    WORKS
+    Works
   </Link>
 
   <Link
   href="/blogs"
   className="border-b-2 border-transparent hover:border-black transition-all duration-300 ease-in-out"
 >
-  BLOGS
+  Blogs
 </Link>
 
 
@@ -76,7 +76,7 @@ export default function Navbar() {
       shadow-sm
     "
   >
-    <span className="font-medium">CONTACT US</span>
+    <span className="font-medium">Contact us</span>
     <MoveRight
       className="
         w-4 h-4

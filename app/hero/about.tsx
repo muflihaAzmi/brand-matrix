@@ -64,7 +64,7 @@ const imageVariant: Variants = {
 
 function About() {
   return (
-    <section className="w-full px-4 md:px-10 py-10 md:py-16">
+    <section className="w-full px-4 md:px-20 py-10 md:py-16  mx-auto container">
       
       {/* Small label */}
       <motion.span
@@ -77,7 +77,7 @@ function About() {
         our journey
       </motion.span>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-6 mt-4">
+      <div className="flex flex-col lg:flex-row justify-between gap-6 mt-4 mx-auto container">
         
         {/* 🔹 LEFT CONTENT */}
         <motion.div

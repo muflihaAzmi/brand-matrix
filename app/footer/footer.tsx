@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 function Footer() {
   const socials = [
@@ -29,10 +30,20 @@ function Footer() {
   ];
   return (
     <footer className="w-full bg-black text-white border-t">
-      <div className=" mx-auto max-w-7xl px-5 py-16">
+      <div className=" mx-auto md:px-24 px-5 py-16">
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Brand Section */}
           <div className="flex flex-col gap-4 max-w-sm">
+            {/* <Link href="/">
+          <Image
+            src="/brandlo.png"
+            alt="Logo"
+            width={140}
+            height={100}
+            className="cursor-pointer  "
+            priority
+          />
+        </Link>  */}
             <span className="text-2xl font-semibold">Brand Matrix Agency</span>
             <p className="text-gray-400 leading-relaxed">
               Crafting impactful brands through strategy, creativity, and

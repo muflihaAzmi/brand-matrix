@@ -85,7 +85,7 @@ const blogItem: Variants = {
 
 function Blogs() {
   return (
-    <section className="bg-white py-20 px-6 md:px-20 flex flex-col md:flex-row gap-16">
+    <section className="bg-white py-20 px-6 md:px-20 flex flex-col md:flex-row gap-16 mx-auto container">
       
       {/* 🔹 LEFT CONTENT */}
       <motion.div
@@ -155,7 +155,7 @@ function Blogs() {
                 <span className="text-gray-400 ml-6">+</span>
               </CollapsibleTrigger>
 
-              <CollapsibleContent className="mt-3 text-gray-600 text-sm leading-relaxed">
+              <CollapsibleContent className="mt-3 text-gray-200 text-sm leading-relaxed">
                 {blog.content}
               </CollapsibleContent>
             </Collapsible>

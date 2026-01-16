@@ -104,7 +104,7 @@ function Works() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gray-900 text-white w-full h-[220vh] px-6 md:px-10"
+      className="relative bg-gray-900 text-white w-full h-[220vh] px-6 md:px-20"
     >
       <motion.div
         variants={headingContainer}

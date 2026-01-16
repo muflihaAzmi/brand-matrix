@@ -3,6 +3,7 @@
 import React from "react";
 import { MoveRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 
 
 const testimonials = [
@@ -83,7 +84,7 @@ const ctaVariant: Variants = {
 
 function VideoTestimonials() {
   return (
-    <section className="flex flex-col gap-20 bg-gray-100 py-20 w-full">
+    <section className="flex flex-col gap-20 bg-gray-100 py-20 w-full mx-auto container px-10">
 
       {/* 🔹 HEADING */}
       <motion.div
@@ -91,7 +92,7 @@ function VideoTestimonials() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, margin: "-120px" }}
-        className="flex flex-col items-center gap-5 px-4"
+        className="flex flex-col items-center gap-5 px-4 "
       >
         <motion.span
           variants={headingItem}
@@ -134,7 +135,7 @@ function VideoTestimonials() {
                 src={item.video}
                 controls
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-110 duration-300 transition"
               />
             </div>
 
@@ -162,20 +163,22 @@ function VideoTestimonials() {
             consultation now.
           </p>
 
-          <button
-            className="
-              group inline-flex items-center gap-2
-              rounded-xl
-              bg-black text-white
-              hover:bg-white hover:text-black
-              px-5 py-2.5
-              transition-colors duration-300
-              shadow-sm
-            "
-          >
-            <span className="font-medium">Let’s Talk</span>
-            <MoveRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
+         <Link href="/contact">
+  <button
+    className="
+      group inline-flex items-center gap-2
+      rounded-xl
+      bg-black text-white
+      hover:bg-white hover:text-black
+      px-5 py-2.5
+      transition-colors duration-300
+      shadow-sm
+    "
+  >
+    <span className="font-medium">Let’s Talk</span>
+    <MoveRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+  </button>
+</Link>
         </div>
       </motion.section>
     </section>

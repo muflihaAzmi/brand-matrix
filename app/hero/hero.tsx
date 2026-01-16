@@ -4,11 +4,14 @@ import React from "react";
 import { Montserrat } from "next/font/google";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
+
 
 const leftItem: Variants = {
   hidden: {
@@ -19,8 +22,8 @@ const leftItem: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6, 
-      ease: [0.22, 1, 0.36, 1], 
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -33,7 +36,7 @@ const RightItem: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6, 
+      duration: 0.6,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -43,16 +46,18 @@ const leftContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.25, 
+      staggerChildren: 0.25,
       delayChildren: 0.2,
     },
   },
 };
 
 function Hero() {
+const router =useRouter();
+
   return (
-    <section className="w-full md:px-10 px-4 py-10 md:py-15">
-      <div className="flex flex-col lg:flex-row justify-between gap-5">
+    <section className="w-full md:px-20 px-5 ">
+      <div className="flex flex-col lg:flex-row justify-between gap-5 mx-auto container">
         <motion.div
           variants={leftContainer}
           initial="hidden"
@@ -81,21 +86,22 @@ function Hero() {
             </motion.p>
 
             <motion.button
-              variants={leftItem}
-              className="
-                group inline-flex items-center gap-2
-                rounded-xl border border-black
-                bg-black text-white
-                hover:bg-white hover:text-black
-                px-5 py-2.5
-                transition-colors duration-300
-                shadow-sm
-                w-fit
-              "
-            >
-              <span className="font-normal">Let’s Build Your Brand</span>
-              <MoveRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-            </motion.button>
+  variants={leftItem}
+  onClick={() => router.push("/contact")}
+  className="
+    group inline-flex items-center gap-2
+    rounded-xl border border-black
+    bg-black text-white
+    hover:bg-white hover:text-black
+    px-5 py-2.5
+    transition-colors duration-300
+    shadow-sm
+    w-fit
+  "
+>
+  <span className="font-normal">Let’s Build Your Brand</span>
+  <MoveRight className="w-4 h-4 transition-all group-hover:translate-x-1" />
+</motion.button>
           </div>
 
           <motion.div variants={leftItem} className="max-w-xl">
@@ -115,7 +121,7 @@ function Hero() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={leftContainer}
-          className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-xl"
+          className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-xl py-8"
         >
           <motion.div
             variants={RightItem}
@@ -129,12 +135,16 @@ function Hero() {
           </motion.div>
 
           <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={leftContainer}
-          className="grid grid-rows-2 gap-4 lg:h-145">
-            < motion.div variants={RightItem} className="bg-black text-white rounded-xl p-6 flex flex-col justify-between">
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={leftContainer}
+            className="grid grid-rows-2 gap-4 lg:h-145"
+          >
+            <motion.div
+              variants={RightItem}
+              className="bg-black text-white rounded-xl p-6 flex flex-col justify-between"
+            >
               <p className="text-sm leading-relaxed text-gray-300">
                 “Their strategic thinking and creative execution helped us build
                 a brand that truly connects with our audience.”
@@ -148,7 +158,10 @@ function Hero() {
               </div>
             </motion.div>
 
-            <motion.div variants={RightItem} className="rounded-xl overflow-hidden">
+            <motion.div
+              variants={RightItem}
+              className="rounded-xl overflow-hidden"
+            >
               <img
                 src="/videomarketting.jpg"
                 className="h-full w-full object-cover"

@@ -80,8 +80,8 @@ function Clients() {
   });
 
   return (
-    <section ref={sectionRef} className="px-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:py-20 py-5 border-b border-gray-200 ">
+    <section ref={sectionRef} className="px-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:py-20 py-5 border-b border-gray-200 mx-auto container">
         {client.map((item, index) => {
           const count = useCountUp(item.value, isInView);
 

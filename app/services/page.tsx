@@ -77,7 +77,7 @@ export default function Page() {
   return (
     <section className="mx-auto container md:px-20 px-5 py-20">
       <h1
-        className={`text-4xl md:text-5xl  text-center font-medium mb-6 ${montserrat.className}`}
+        className={`text-4xl md:text-5xl  text-center tracking-tighter font-medium mb-6 ${montserrat.className}`}
       >
         Our Services
       </h1>
@@ -106,7 +106,7 @@ export default function Page() {
               } items-center gap-14`}
             >
               <div className="md:w-1/2">
-                <h3 className="text-3xl md:text-4xl font-medium mb-6">
+                <h3 className="text-3xl md:text-4xl tracking-tight font-medium mb-6">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed text-lg">
@@ -133,15 +133,14 @@ export default function Page() {
           Find Us
         </h2>
 
-        <div className="max-w-3xl mx-auto rounded-xl overflow-hidden border border-gray-800">
-          <iframe
-            src="https://www.google.com/maps?q=Manjeri%20Kerala&output=embed"
-            width="100%"
-            height="400"
-            loading="lazy"
-            className="grayscale invert"
-          />
-        </div>
+        <div className="bg-[#e5e7eb] w-full rounded overflow-hidden relative min-h-[630px] mb-4">
+              <iframe
+                src="https://www.google.com/maps?q=11.121481,76.119691&output=embed"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
       </section>
     </section>
   );

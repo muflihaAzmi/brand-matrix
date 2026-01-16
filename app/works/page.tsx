@@ -99,12 +99,12 @@ export default function Page() {
   ];
 
   return (
-    <main className="text-[#111]">
+    <main className="text-[#111] ">
       <section className="bg-black container mx-auto px-5 md:px-20 py-20">
         <h1
-          className={`text-4xl md:text-5xl text-center font-medium mb-6 text-white ${montserrat.className}`}
+          className={`text-4xl md:text-5xl tracking-tight text-center font-medium mb-6 text-white ${montserrat.className}`}
         >
-          Our Remarkable Works
+         Our Featured Works
         </h1>
 
         <p className="text-gray-400 text-center mb-10 leading-relaxed">

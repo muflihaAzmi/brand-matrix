@@ -1,12 +1,8 @@
 "use client";
-import type { Metadata } from "next";
 
 import React from "react";
 import { Montserrat } from "next/font/google";
-export const metadata: Metadata = {
-  title: "Brand Matrix Agency || blogs",
-  description: "corprate Branding And Creative Agency",
-};
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],

@@ -1,15 +1,11 @@
 "use client";
-import type { Metadata } from "next";
 
 import React from "react";
 import { Montserrat } from "next/font/google";
 import Clients from "../hero/clients";
 import { motion, Variants } from "framer-motion";
 
-export const metadata: Metadata = {
-  title: "Brand Matrix Agency || Services",
-  description: "corprate Branding And Creative Agency",
-};
+
 
 const montserrat = Montserrat({
   subsets: ["latin"],

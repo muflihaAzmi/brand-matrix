@@ -1,13 +1,9 @@
 "use client";
-import type { Metadata } from "next";
 
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 
-export const metadata: Metadata = {
-  title: "Brand Matrix Agency || contact us",
-  description: "corprate Branding And Creative Agency",
-};
+
 export default function ContactPage() {
   const formRef = useRef<HTMLFormElement>(null);
 

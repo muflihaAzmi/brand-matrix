@@ -16,12 +16,7 @@ const works = [
     description:
       "Internationally valued diploma programs with project-oriented training, AI-integrated software classes, and 100% placement assistance at Milaan School of Design, Manjeri.",
   },
-  {
-    image: "/skyblue.jpeg",
-    title: "Premium Teak Wood Chairs Offer",
-    description:
-      "Designed to last generations. Premium teak wood chairs available from ₹13,899 at SkyBlu International Furniture, Empuraan.",
-  },
+ 
   {
     image: "/milan2.jpeg",
     title: "Vijaya Offer – Skill Development Discount",

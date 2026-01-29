@@ -22,7 +22,7 @@ const leftItem: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.3,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -47,7 +47,7 @@ const leftContainer: Variants = {
   visible: {
     transition: {
       staggerChildren: 0.25,
-      delayChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };

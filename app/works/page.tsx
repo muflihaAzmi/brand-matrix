@@ -1,4 +1,5 @@
 "use client";
+import type { Metadata } from "next";
 
 import React from "react";
 import Image from "next/image";
@@ -8,6 +9,10 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
+export const metadata: Metadata = {
+  title: "Brand Matrix Agency || works",
+  description: "corprate Branding And Creative Agency",
+};
 
 export default function Page() {
   const works = [
@@ -18,13 +23,7 @@ export default function Page() {
       description:
         "Internationally valued diploma programs with project-oriented training, AI-integrated software classes, and 100% placement assistance at Milaan School of Design, Manjeri.",
     },
-    {
-      type: "image",
-      image: "/skyblue.jpeg",
-      title: "Premium Teak Wood Chairs Offer",
-      description:
-        "Designed to last generations. Premium teak wood chairs available from ₹13,899 at SkyBlu International Furniture, Empuraan.",
-    },
+  
     {
       type: "image",
       image: "/milan2.jpeg",
@@ -146,7 +145,7 @@ export default function Page() {
           {works.map((work, index) => (
             <div
               key={index}
-              className="bg-[#111] text-white rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+              className="bg-[#111] text-white rounded overflow-hidden hover:scale-[1.02] transition-transform duration-300"
             >
               <div className="relative h-52 overflow-hidden">
                 {work.type === "video" ? (

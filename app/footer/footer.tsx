@@ -30,7 +30,7 @@ function Footer() {
   ];
   return (
     <footer className="w-full bg-black text-white border-t">
-      <div className=" mx-auto md:px-24 px-5 py-16">
+      <div className=" mx-auto md:px-24 px-5 py-14">
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Brand Section */}
           <div className="flex flex-col gap-4 max-w-sm">
@@ -78,21 +78,30 @@ function Footer() {
                 <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-400  transition-all duration-300">
                   <MapPin size={16} />
                 </div>
-                <span>Manjeri, Calicut</span>
+                <span>Calicut, Manjeri</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-400  transition-all duration-300">
                   <Mail size={16} />
                 </div>
-                <span>BrandMatrix.agency@gmail.com</span>
+                {/* <span>BrandMatrix.agency@gmail.com</span> */}
+                <a
+                      href="mailto:BrandMatrix.agency@gmail.com"
+                      className=""
+                    >
+                      BrandMatrix.agency@gmail.com
+                    </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-400  transition-all duration-300">
                   <Phone size={16} />
                 </div>
-                <span>92071 28680</span>
+                {/* <span>7306374592</span> */}
+                <a href="tel:7306374592" className="block hover:underline">
+                  7306374592
+                </a>
               </div>
             </div>
 

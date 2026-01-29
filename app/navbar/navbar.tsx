@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-white h-20 w-full ${urbanist.className} pl-10 pr-20 shadow-sm`}
+      className={`bg-white h-20 w-full ${urbanist.className} md:pl-12 md:pr-20 pr-4 shadow-sm`}
     >
       {/* Top Bar */}
       <div className="flex items-center h-full justify-between">
@@ -78,7 +78,7 @@ export default function Navbar() {
         shadow-sm
       "
           >
-            <span className="font-medium">Contact us</span>
+            <span className="font-medium">Contact Us</span>
             <MoveRight
               className="
           w-4 h-4

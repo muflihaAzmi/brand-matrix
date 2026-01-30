@@ -81,7 +81,7 @@ function Clients() {
 
   return (
     <section ref={sectionRef} className="md:px-20 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:py-20 py-10 border-b border-gray-200 md:mx-auto md:container">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-20  border-b border-gray-200 md:mx-auto md:container">
         {client.map((item, index) => {
           const count = useCountUp(item.value, isInView);
 
@@ -95,9 +95,9 @@ function Clients() {
                 duration: 1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="p-6 text-center rounded-sm shadow-sm "
+              className="p-6 text-center rounded-sm shadow-sm  bg-gray-200"
             >
-              <span className="inline-block bg-gray-100 px-4 py-1 rounded text-sm text-gray-600">
+              <span className="inline-block bg-gray-100 px-4 py-1 rounded text-sm text-gray-900">
                 {item.title}
               </span>
 

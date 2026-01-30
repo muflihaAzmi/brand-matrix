@@ -130,7 +130,7 @@ function VideoTestimonials() {
             className="flex flex-col gap-3"
           >
             {/* Video */}
-            <div className="h-[220px] md:h-[380px] rounded-xl overflow-hidden">
+            <div className="h-55 md:h-95 rounded-xl overflow-hidden">
               <video
                 src={item.video}
                 controls

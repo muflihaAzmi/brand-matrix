@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 
 import React from "react";
 import Image from "next/image";
@@ -9,10 +8,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
-export const metadata: Metadata = {
-  title: "Brand Matrix Agency || works",
-  description: "corprate Branding And Creative Agency",
-};
 
 export default function Page() {
   const works = [

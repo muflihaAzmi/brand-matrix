@@ -135,7 +135,7 @@ export default function Page() {
           Find Us
         </h2>
 
-        <div className="bg-[#e5e7eb] w-full rounded overflow-hidden relative min-h-[630px] mb-4">
+        <div className="bg-[#e5e7eb] w-full rounded overflow-hidden relative min-h-157.5 mb-4">
               <iframe
                 src="https://www.google.com/maps?q=11.121481,76.119691&output=embed"
                 className="absolute inset-0 w-full h-full border-0"

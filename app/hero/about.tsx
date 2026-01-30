@@ -58,9 +58,7 @@ const imageVariant: Variants = {
   },
 };
 
-/* =======================
-   COMPONENT
-======================= */
+
 
 function About() {
   return (
@@ -151,7 +149,7 @@ function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, margin: "-120px" }}
-          className="relative w-full h-[500px] lg:w-1/2 rounded-xl overflow-hidden"
+          className="relative w-full h-125 lg:w-1/2 rounded-xl overflow-hidden"
         >
           <Image
             src="/about.jpg"

@@ -73,9 +73,7 @@ const gridItem: Variants = {
   },
 };
 
-/* =======================
-   COMPONENT
-======================= */
+
 
 function Offer() {
   return (
@@ -125,7 +123,7 @@ function Offer() {
           <motion.div
             key={index}
             variants={gridItem}
-            className="group relative h-[160px] md:h-[300px] rounded-xl overflow-hidden"
+            className="group relative h-40 md:h-75 rounded-xl overflow-hidden"
           >
             {/* Image */}
             <Image

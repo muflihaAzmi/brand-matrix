@@ -56,14 +56,14 @@ function Hero() {
 const router =useRouter();
 
   return (
-    <section className="w-full md:px-20 px-5 ">
+    <section className="w-full md:px-20 px-2 ">
       <div className="flex flex-col lg:flex-row justify-between gap-5 mx-auto container">
         <motion.div
           variants={leftContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.4 }}
-          className="flex flex-col justify-between gap-10 max-w-3xl py-10"
+          viewport={{ once: true, amount: 0.4 }}
+          className="flex flex-col justify-between gap-10 md:max-w-3xl py-10"
         >
           <div className="flex flex-col gap-6">
             <motion.span
@@ -119,7 +119,7 @@ const router =useRouter();
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           variants={leftContainer}
           className="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-xl py-8"
         >

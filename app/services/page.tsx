@@ -77,14 +77,14 @@ const services = [
 
 export default function Page() {
   return (
-    <section className="mx-auto container md:px-20 px-5 py-20">
+    <section className="md:mx-auto md:container md:px-20 px-4 md:py-20 py-10">
       <h1
-        className={`text-4xl md:text-5xl  text-center tracking-tighter font-medium mb-6 ${montserrat.className}`}
+        className={`text-4xl md:text-5xl  text-center tracking-tighter font-medium mb-2 ${montserrat.className}`}
       >
         Our Services
       </h1>
 
-      <p className="text-gray-400  text-center  mb-20 leading-relaxed">
+      <p className="text-gray-400  text-center  mb-10 leading-relaxed">
         Digital Marketing, Branding, Advertising & Creative Production —
         everything your brand needs to grow and stand out.
       </p>
@@ -94,7 +94,7 @@ export default function Page() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-col gap-24"
+        className="flex flex-col gap-10"
       >
         {services.map((service, index) => {
           const reverse = index % 2 !== 0;
@@ -105,13 +105,13 @@ export default function Page() {
               variants={cardVariants}
               className={`flex flex-col md:flex-row ${
                 reverse ? "md:flex-row-reverse" : ""
-              } items-center gap-14`}
+              } items-center md:gap-10 gap-6`}
             >
               <div className="md:w-1/2">
-                <h3 className="text-3xl md:text-4xl tracking-tight font-medium mb-6">
+                <h3 className="text-3xl md:text-4xl tracking-tight font-medium mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed text-lg">
+                <p className="text-gray-400 leading-relaxed text-md">
                   {service.desc}
                 </p>
               </div>
@@ -130,7 +130,7 @@ export default function Page() {
 
       <Clients />
 
-      <section className="px-6 py-20">
+      <section className="px-4 md:py-20 py-10">
         <h2 className="text-3xl font-semibold mb-10 text-center">
           Find Us
         </h2>

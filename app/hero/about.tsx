@@ -62,7 +62,7 @@ const imageVariant: Variants = {
 
 function About() {
   return (
-    <section className="w-full px-4 md:px-20 py-10 md:py-16  mx-auto container">
+    <section className="w-full  md:px-20 px-4 py-10 md:py-16  mx-auto container">
       
       {/* Small label */}
       <motion.span

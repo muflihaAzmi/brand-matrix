@@ -56,8 +56,8 @@ function Hero() {
 const router =useRouter();
 
   return (
-    <section className="w-full md:px-20 px-2 ">
-      <div className="flex flex-col lg:flex-row justify-between gap-5 mx-auto container">
+    <section className="w-full md:px-20 px-4 ">
+      <div className="flex flex-col lg:flex-row justify-between md:gap-5 mx-auto container">
         <motion.div
           variants={leftContainer}
           initial="hidden"

@@ -77,7 +77,7 @@ const gridItem: Variants = {
 
 function Offer() {
   return (
-    <section className="flex flex-col md:gap-20 gap-10 bg-gray-100  py-10 md:py-24 w-full md:px-10 px-2">
+    <section className="flex flex-col md:gap-20 gap-10 bg-gray-100  py-10 md:py-24 w-full md:px-10 px-4">
       
       {/* 🔹 HEADING (scroll animated) */}
       <motion.div

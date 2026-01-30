@@ -84,7 +84,7 @@ const ctaVariant: Variants = {
 
 function VideoTestimonials() {
   return (
-    <section className="flex flex-col gap-20 bg-gray-100 py-20 w-full mx-auto container px-10">
+    <section className="flex flex-col gap-20 bg-gray-100 py-20 w-full md:mx-auto md:container md:px-10 px-4">
 
       {/* 🔹 HEADING */}
       <motion.div
@@ -155,7 +155,7 @@ function VideoTestimonials() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, margin: "-120px" }}
-        className="w-full px-6 md:px-10 py-5"
+        className="w-full px-4 md:px-10 py-5"
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-200 shadow-md rounded-2xl px-6 md:px-10 py-6">
           <p className="text-gray-700 text-center md:text-left text-base md:text-lg">

@@ -23,18 +23,33 @@ export default function Navbar() {
       className={`bg-white h-20 w-full ${urbanist.className} md:pl-12 md:pr-20 pr-4 shadow-sm`}
     >
       {/* Top Bar */}
-      <div className="flex items-center h-full justify-between">
-        {/* Logo */}
-        <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={180}
-            height={100}
-            className="object-contain cursor-pointer"
-            priority
-          />
-        </Link>
+       <div className="flex items-center h-full justify-between">
+
+    {/* LEFT: Logo */}
+    <div className="flex items-center">
+      <Link href="/">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="md:hidden block cursor-pointer"
+          priority
+        />
+      </Link>
+
+      <Link href="/">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={180}
+          height={100}
+          className="hidden md:block cursor-pointer object-contain"
+          priority
+        />
+      </Link>
+    </div>
+      
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-14 text-black text-[16px] font-medium">

@@ -85,7 +85,7 @@ const blogItem: Variants = {
 
 function Blogs() {
   return (
-    <section className="bg-white py-20 px-6 md:px-20 flex flex-col md:flex-row gap-16 mx-auto container">
+    <section className="bg-white py-20 px-4 md:px-20 flex flex-col md:flex-row gap-16 md:mx-auto md:container">
       
       {/* 🔹 LEFT CONTENT */}
       <motion.div

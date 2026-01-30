@@ -23,7 +23,7 @@ export default function Navbar() {
       className={`bg-white h-20 w-full ${urbanist.className} md:pl-12 md:pr-20 pr-4 shadow-sm`}
     >
       {/* Top Bar */}
-       <div className="flex items-center h-full justify-between">
+       <div className="flex items-center h-full justify-between md:mx-auto md:container">
 
     {/* LEFT: Logo */}
     <div className="flex items-center">
@@ -107,7 +107,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button onClick={() => setOpen(!open)} className="md:hidden text-black">
-          {open ? <X size={28} /> : <Menu size={28} />}
+          {open ? <X size={28} /> : <Menu size={28}  />}
         </button>
       </div>
 

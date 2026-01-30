@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/collapsible";
 import { MoveRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 
 
@@ -84,6 +85,7 @@ const blogItem: Variants = {
 
 
 function Blogs() {
+  const router=useRouter()
   return (
     <section className="bg-white py-20 px-4 md:px-20 flex flex-col md:flex-row gap-16 md:mx-auto md:container">
       
@@ -135,7 +137,8 @@ function Blogs() {
               -translate-x-1
               group-hover:translate-x-1
               transition-transform duration-300
-            "
+            "  onClick={() => router.push("/blogs")}
+
           />
         </motion.button>
       </motion.div>

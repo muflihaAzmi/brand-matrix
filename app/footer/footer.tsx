@@ -30,7 +30,7 @@ function Footer() {
   ];
   return (
     <footer className="w-full bg-black text-white border-t">
-      <div className=" mx-auto md:px-24 px-5 py-14">
+      <div className=" mx-auto md:px-24 px-5 py-14 md:mx-auto md:container">
         <div className="flex flex-col md:flex-row justify-between gap-6">
           {/* Brand Section */}
           <div className="flex flex-col gap-4 max-w-sm">

@@ -75,7 +75,7 @@ function About() {
         our journey
       </motion.span>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-6 mt-4 mx-auto container">
+      <div className="flex flex-col lg:flex-row justify-between gap-6 mt-4 ">
         
         {/* 🔹 LEFT CONTENT */}
         <motion.div

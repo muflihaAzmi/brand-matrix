@@ -1,188 +1,190 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, Variants } from "framer-motion";
-import { MoveRight } from "lucide-react";
-import { useRouter } from "next/navigation";
-
-
-
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const works = [
   {
     image: "/milan.jpeg",
     title: "Diploma & Design Career Program",
     description:
-      "Internationally valued diploma programs with project-oriented training, AI-integrated software classes, and 100% placement assistance at Milaan School of Design, Manjeri.",
+      "Internationally valued diploma programs with project-oriented training.",
   },
- 
   {
     image: "/milan2.jpeg",
     title: "Vijaya Offer – Skill Development Discount",
     description:
-      "Special festive offer with up to 10% discount on diploma courses including BIM, Architectural Visualization, and Interior Designing at Milaan School of Design.",
+      "Special festive offer with discounts on diploma courses.",
   },
   {
     image: "/gazpacho.jpeg",
     title: "Site Supervisor Job Vacancy",
     description:
-      "Gazpacho Kitchens is hiring Site Supervisors. 1–2 years experience preferred. Freshers are welcome. Apply now in Calicut.",
+      "Gazpacho Kitchens is hiring Site Supervisors in Calicut.",
   },
   {
     image: "/shamla.jpeg",
     title: "Happy New Year 2026 – Advanced Scan Centre",
-    description:
-      "Wishing a healthy and confident 2026 from Dr. Shamla’s Advanced Scan Centre. Clear images, accurate diagnosis, and trusted radiology care.",
+    description: "Trusted radiology care with accurate diagnosis.",
   },
   {
     image: "/succesway.jpeg",
     title: "21 Days Habit Building Challenge",
     description:
-      "Create powerful habits in just 21 days. Daily actions that lead to extraordinary results, powered by Success Way.",
+      "Create powerful habits in just 21 days with Success Way.",
   },
- 
-
-
-
 ];
 
+export default function WorksCarousel() {
+  const [index, setIndex] = useState(0);
 
-/* Heading flow */
-const headingContainer: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.25,
-      delayChildren: 0.1,
-    },
-  },
-};
+  // Next Slide
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % works.length);
+  };
 
-const headingItem: Variants = {
-  hidden: { opacity: 0, y: 22 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+  // Previous Slide
+  const prevSlide = () => {
+    setIndex((prev) => (prev - 1 + works.length) % works.length);
+  };
 
-const cardVariant: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+  // Auto Slide Timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 4000); // 
 
+    return () => clearInterval(timer);
+  }, []);
 
-function Works() {
-  const router = useRouter();
-
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"],
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  // Visible 3 items
+  const visibleWorks = [
+    works[index],
+    works[(index + 1) % works.length],
+    works[(index + 2) % works.length],
+  ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative bg-gray-900 text-white w-full h-[220vh] px-6 md:px-20"
-    >
-      <motion.div
-        variants={headingContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, margin: "-120px" }}
-        className="pt-20 max-w-3xl"
-      >
-        <motion.h2
-          variants={headingItem}
-          className="text-white text-3xl tracking-tight"
+    <section className="relative overflow-hidden w-full py-24 px-6 md:px-20 text-white bg-[#050615]">
+      
+      <div className="absolute inset-0 -z-10">
+        {/* Gradient Base */}
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
+
+        {/* Blue Glow */}
+        {/* <div className="absolute top-[-200px] left-[-200px] w-[550px] h-[550px] bg-blue-600/30 blur-[170px] rounded-full" /> */}
+
+        {/* Red Glow */}
+        {/* <div className="absolute bottom-[-200px] right-[-200px] w-[550px] h-[550px] bg-red-600/30 blur-[170px] rounded-full" /> */}
+
+        {/* Purple Center Glow */}
+        {/* <div className="absolute top-[35%] left-[35%] w-[450px] h-[450px] bg-purple-600/20 blur-[200px] rounded-full" /> */}
+
+        {/* Soft Pattern */}
+        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_60%)]" /> */}
+      </div>
+
+      {/* Heading */}
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
+          <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
+            Our Works
+          </span>
+        </h2>
+
+        <p className="mt-4 text-gray-300 text-lg">
+          Explore some of our latest branding, digital, and media projects.
+        </p>
+      </div>
+
+      {/* Carousel */}
+      <div className="relative mt-16 max-w-6xl mx-auto overflow-hidden">
+        
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -80 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {visibleWorks.map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -12, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 150, damping: 18 }}
+                className="
+                  rounded-2xl overflow-hidden
+                  bg-white/5 backdrop-blur-md
+                  border border-white/10
+                  shadow-lg hover:shadow-2xl
+                  hover:border-blue-500/40
+                  transition-all duration-300
+                "
+              >
+                {/* Image */}
+                <div className="relative h-60 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-110"
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-red-600/10" />
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-sm text-gray-300 mt-2 leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-4 h-[3px] w-16 rounded-full bg-gradient-to-r from-blue-500 to-red-500" />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Buttons */}
+        <button
+          onClick={prevSlide}
+          className="absolute top-1/2 left-2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition"
         >
-          Our Works
-        </motion.h2>
+          <ChevronLeft className="w-6 h-6 text-white" />
+        </button>
 
-        <motion.p variants={headingItem} className="mt-4 text-lg text-gray-300">
-          A selection of our most impactful branding, digital, and media
-          projects.
-        </motion.p>
+        <button
+          onClick={nextSlide}
+          className="absolute top-1/2 right-2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition"
+        >
+          <ChevronRight className="w-6 h-6 text-white" />
+        </button>
+      </div>
 
-       <motion.button
-  variants={headingItem}
-  onClick={() => router.push("/works")}
-  className="
-    group inline-flex items-center gap-2
-    rounded-xl
-    bg-white text-black
-    hover:bg-gray-400 hover:text-white
-    px-5 py-2.5
-    transition-colors duration-300
-    shadow-sm mt-4
-  "
->
-  <span className="font-medium">View Works</span>
-  <MoveRight
-    className="
-      w-4 h-4
-      opacity-0 -translate-x-1
-      group-hover:opacity-100 group-hover:translate-x-1
-      transition-all duration-300
-    "
-  />
-</motion.button>
-
-      </motion.div>
-
-      {/* 🔹 HORIZONTAL SCROLL */}
-      <div className="sticky top-0 h-125 flex items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-10 mt-20">
-          {works.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, margin: "-120px" }}
-              className="min-w-105"
-              whileHover={{ y: -8 }}
-              transition={{
-                type: "spring",
-                stiffness: 120,
-                damping: 18,
-              }}
-            >
-              <div className="relative h-65 rounded-2xl overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="text-sm text-gray-400 mt-1">{item.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-10">
+        {works.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              i === index
+                ? "w-10 bg-gradient-to-r from-blue-500 to-red-500"
+                : "w-2.5 bg-white/30"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
 }
-
-export default Works;

@@ -55,10 +55,15 @@ export default function Page() {
   ];
 
   return (
-    <main className={`${montserrat.className} bg-[#f8f9fb] min-h-screen`}>
-      <section className=" mx-auto px-5 md:px-20 py-16">
+    <main className={`${montserrat.className}  min-h-screen relative`}>
+       <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
+        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-red-500/25 blur-[140px] rounded-full" />
+        <div className="absolute top-[35%] left-[30%] w-[450px] h-[450px] bg-purple-500/15 blur-[160px] rounded-full" />
+      </div>
+      <section className=" mx-auto  px-4 sm:px-6 py-16 container">
         {/* Header */}
-        <div className="mb-14">
+        <div className="mb-14 pl-5">
           <h1 className="text-4xl font-semibold text-[#111] mb-4">
             Digital Marketing Blogs
           </h1>

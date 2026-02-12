@@ -10,8 +10,6 @@ import { MoveRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { useRouter } from "next/navigation";
 
-
-
 const blogs = [
   {
     title: "Why Every Business Needs a Strong Digital Presence",
@@ -34,8 +32,6 @@ const blogs = [
       "Consistent, value-driven content on social platforms builds credibility, engagement, and long-term relationships with customers.",
   },
 ];
-
-
 
 /* Left content */
 const leftContainer: Variants = {
@@ -83,88 +79,119 @@ const blogItem: Variants = {
   },
 };
 
-
 function Blogs() {
-  const router=useRouter()
+  const router = useRouter();
+
   return (
-    <section className="bg-white py-20 px-4 md:px-20 flex flex-col md:flex-row gap-16 md:mx-auto md:container">
+    <section className="relative overflow-hidden md:py-42 py-16 px-4 sm:px-6 flex flex-col md:flex-row gap-16 text-white">
       
-      {/* 🔹 LEFT CONTENT */}
-      <motion.div
-        variants={leftContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, margin: "-120px" }}
-        className="flex flex-col gap-5 px-4 md:max-w-md"
-      >
-        <motion.span
-          variants={leftItem}
-          className="text-gray-700 uppercase text-sm tracking-wider"
-        >
-          Blogs
-        </motion.span>
+      {/* 🔥 Dark Base Background */}
+      {/* <div className="absolute inset-0 -z-20 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
 
-        <motion.h2
-          variants={leftItem}
-          className="text-3xl text-black tracking-tight"
-        >
-          Insights From Our Digital Team
-        </motion.h2>
+      {/* Glow Theme */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
+        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-red-500/25 blur-[140px] rounded-full" />
+        <div className="absolute top-[35%] left-[30%] w-[450px] h-[450px] bg-purple-500/15 blur-[160px] rounded-full" />
+      </div>
 
-        <motion.p
-          variants={leftItem}
-          className="max-w-xl text-gray-700"
-        >
-          Thoughtful articles on branding, marketing, and digital growth.
-        </motion.p>
+      {/* Soft Pattern */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_65%)]" />
 
-        <motion.button
-          variants={leftItem}
-          className="
-            group inline-flex items-center gap-3
-            rounded-xl
-            bg-gray-700 text-white
-            hover:bg-gray-400 hover:text-white
-            px-5 py-2.5
-            transition-colors duration-300
-            shadow-sm mt-4 w-40
-          "
+      <div className="flex flex-col md:flex-row gap-16 md:mx-auto md:container w-full">
+        
+        {/* 🔹 LEFT CONTENT */}
+        <motion.div
+          variants={leftContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "-120px" }}
+          className="flex flex-col gap-10 px-2 md:max-w-md"
         >
-          <span className="font-medium">More Blogs</span>
-          <MoveRight
+          <motion.span
+            variants={leftItem}
+            className="text-blue-300 uppercase text-sm tracking-wider font-semibold"
+          >
+            Blogs
+          </motion.span>
+
+          <motion.h2
+            variants={leftItem}
+            className="text-4xl md:text-5xl text-gray-800 font-semibold tracking-tight "
+          >
+            Insights From Our Digital Team
+          </motion.h2>
+
+          <motion.p
+            variants={leftItem}
+            className="max-w-xl text-gray-800 leading-relaxed"
+          >
+            Thoughtful articles on branding, marketing, and digital growth.
+          </motion.p>
+
+          <motion.button
+            variants={leftItem}
+            onClick={() => router.push("/blogs")}
             className="
-              w-4 h-4
-              -translate-x-1
-              group-hover:translate-x-1
-              transition-transform duration-300
-            "  onClick={() => router.push("/blogs")}
+              group inline-flex items-center gap-3
+              rounded-xl
+              bg-gradient-to-r from-blue-600 to-red-600
+              hover:from-red-600 hover:to-blue-600
+              px-6 py-3
+              transition-all duration-300
+              shadow-md hover:shadow-xl
+              w-fit
+            "
+          >
+            <span className="font-semibold">More Blogs</span>
 
-          />
-        </motion.button>
-      </motion.div>
+            <MoveRight
+              className="
+                w-4 h-4
+                -translate-x-1
+                group-hover:translate-x-1
+                transition-transform duration-300
+              "
+            />
+          </motion.button>
+        </motion.div>
 
-      <motion.div
-        variants={blogContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, margin: "-120px" }}
-        className="max-w-3xl mx-auto space-y-4 w-full"
-      >
-        {blogs.map((blog, index) => (
-          <motion.div key={index} variants={blogItem}>
-            <Collapsible className="bg-gray-700 text-white rounded-xl border border-gray-200 p-4">
-              <CollapsibleTrigger className="w-full text-left font-medium text-lg flex justify-between items-center">
-                {blog.title}
-                <span className="text-gray-400 ml-6">+</span>
-              </CollapsibleTrigger>
+        {/* 🔹 BLOG LIST */}
+        <motion.div
+          variants={blogContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "-120px" }}
+          className="max-w-3xl mx-auto space-y-6 w-full"
+        >
+          {blogs.map((blog, index) => (
+            <motion.div key={index} variants={blogItem}>
+              <Collapsible
+                className="
+                  bg-white/10 backdrop-blur-md
+                  text-gray-800 rounded-2xl
+                  border border-white/20
+                  p-5 shadow-lg
+                  hover:border-blue-500/50
+                  transition-all duration-300
+                "
+              >
+                <CollapsibleTrigger className="w-full text-left font-semibold text-lg flex justify-between items-center">
+                  {blog.title}
 
-              <CollapsibleContent className="mt-3 text-gray-200 text-sm leading-relaxed">
-                {blog.content}
-              </CollapsibleContent>
-            </Collapsible>
-          </motion.div>
-        ))}
-      </motion.div>
+                  <span className="ml-6 flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-red-600 text-white font-bold">
+                    +
+                  </span>
+                </CollapsibleTrigger>
+
+                <CollapsibleContent className="mt-4 text-gray-700 text-sm leading-relaxed">
+                  {blog.content}
+                </CollapsibleContent>
+              </Collapsible>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }

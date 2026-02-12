@@ -5,7 +5,6 @@ import { MoveRight } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 
-
 const testimonials = [
   {
     video: "/feed1.mp4",
@@ -14,8 +13,8 @@ const testimonials = [
   },
   {
     video: "/feed2.mp4",
-    name: "Anjali Nair",
-    role: "Marketing Head, Retail Brand",
+    name: "Prijeesh",
+    role: "Rajadhani, Civil Engineer",
   },
   {
     video: "/feed4.mp4",
@@ -23,7 +22,6 @@ const testimonials = [
     role: "Business Owner",
   },
 ];
-
 
 const headingContainer: Variants = {
   hidden: {},
@@ -81,10 +79,22 @@ const ctaVariant: Variants = {
   },
 };
 
-
 function VideoTestimonials() {
   return (
-    <section className="flex flex-col gap-20 bg-gray-100 py-20 w-full  md:px-10 px-4">
+    <section className="relative overflow-hidden w-full py-20 md:py-40 px-4 md:px-10 text-white">
+      
+      {/* 🔥 Dark Base Background */}
+      {/* <div className="absolute inset-0 -z-20 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
+
+      {/* Glow Blobs (Your Theme) */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
+        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-red-500/25 blur-[140px] rounded-full" />
+        <div className="absolute top-[35%] left-[30%] w-[450px] h-[450px] bg-purple-500/15 blur-[160px] rounded-full" />
+      </div>
+
+      {/* Soft Pattern */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_65%)]" />
 
       {/* 🔹 HEADING */}
       <motion.div
@@ -92,42 +102,56 @@ function VideoTestimonials() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, margin: "-120px" }}
-        className="flex flex-col items-center gap-5 px-4 md:mx-auto md:container "
+        className="flex flex-col items-center gap-5 md:mx-auto md:container"
       >
         <motion.span
           variants={headingItem}
-          className="text-gray-500 uppercase text-sm tracking-wider"
+          className="text-blue-300 uppercase text-sm tracking-wider font-semibold"
         >
           Testimonials
         </motion.span>
 
         <motion.h2
           variants={headingItem}
-          className="md:text-5xl text-3xl tracking-tight text-center text-black"
+          className="md:text-5xl text-3xl tracking-tight text-center font-semibold"
         >
-          What Our Clients Say
+          <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
+            What Our Clients Say
+          </span>
         </motion.h2>
 
         <motion.p
           variants={headingItem}
-          className="text-center max-w-xl text-gray-400"
+          className="text-center max-w-xl text-gray-800"
         >
           Real feedback from brands we’ve helped grow and scale.
         </motion.p>
       </motion.div>
 
+      {/* 🔹 VIDEO GRID */}
       <motion.div
         variants={gridContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, margin: "-120px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-20 md:mx-auto md:container"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 md:mx-auto md:container"
       >
         {testimonials.map((item, index) => (
           <motion.div
             key={index}
             variants={gridItem}
-            className="flex flex-col gap-3"
+            whileHover={{ y: -10, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 150, damping: 18 }}
+            className="
+              flex flex-col gap-4
+              rounded-2xl
+              bg-white/5 backdrop-blur-md
+              border border-white/10
+              shadow-lg hover:shadow-2xl
+              hover:border-blue-500/40
+              transition-all duration-300
+              p-4
+            "
           >
             {/* Video */}
             <div className="h-55 md:h-95 rounded-xl overflow-hidden">
@@ -135,50 +159,62 @@ function VideoTestimonials() {
                 src={item.video}
                 controls
                 playsInline
-                className="w-full h-full object-cover hover:scale-110 duration-300 transition"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
 
             {/* Text */}
             <div className="px-1">
-              <h3 className="text-black text-lg font-semibold tracking-tight">
+              <h3 className="text-gray-800 text-lg font-semibold tracking-tight">
                 {item.name}
               </h3>
-              <p className="text-sm text-gray-500">{item.role}</p>
+              <p className="text-sm text-gray-800">{item.role}</p>
+
+              <div className="mt-4 h-[3px] w-14 rounded-full bg-gradient-to-r from-blue-500 to-red-500" />
             </div>
           </motion.div>
         ))}
       </motion.div>
 
+      {/* 🔹 CTA */}
       <motion.section
         variants={ctaVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, margin: "-120px" }}
-        className="w-full px-4 md:px-10 py-5 md:mx-auto md:container"
+        className="w-full mt-16 md:mx-auto md:container"
       >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-200 shadow-md rounded-2xl px-6 md:px-10 py-6">
-          <p className="text-gray-700 text-center md:text-left text-base md:text-lg">
+        <div
+          className="
+            flex flex-col md:flex-row items-center justify-between gap-6
+            bg-white/5 backdrop-blur-md
+            border border-white/10
+            shadow-lg rounded-2xl
+            px-6 md:px-10 py-8
+          "
+        >
+          <p className="text-gray-800 text-center md:text-left text-base md:text-lg leading-relaxed">
             Let’s discuss your business goals — schedule your 20-minute
             consultation now.
           </p>
 
-         <Link href="/contact">
-  <button
-    className="
-      group inline-flex items-center gap-2
-      rounded-xl
-      bg-black text-white
-      hover:bg-white hover:text-black
-      px-5 py-2.5
-      transition-colors duration-300
-      shadow-sm
-    "
-  >
-    <span className="font-medium">Let’s Talk</span>
-    <MoveRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-  </button>
-</Link>
+          <Link href="/contact">
+            <button
+              className="
+                group inline-flex items-center gap-2
+                rounded-xl
+                bg-gradient-to-r from-blue-600 to-red-600
+                text-white
+                hover:from-red-600 hover:to-blue-600
+                px-6 py-3
+                transition-all duration-300
+                shadow-md hover:shadow-xl
+              "
+            >
+              <span className="font-medium">Book A Free Strategy Call</span>
+              <MoveRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </Link>
         </div>
       </motion.section>
     </section>

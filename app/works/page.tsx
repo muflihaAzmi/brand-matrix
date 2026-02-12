@@ -93,87 +93,96 @@ export default function Page() {
   ];
 
   return (
-    <main className="text-[#111] ">
-      <section className="bg-black container mx-auto px-5 md:px-20 py-20">
-        <h1
-          className={`text-4xl md:text-5xl tracking-tight text-center font-medium mb-6 text-white ${montserrat.className}`}
-        >
-         Our Featured Works
-        </h1>
+   <main className="text-[#111]">
+  
+  {/* Section 1 */}
+  <section className="bg-[#050615] py-20">
+    <div className="container mx-auto px-4 sm:px-6">
+      <h1
+        className={`text-4xl md:text-5xl tracking-tight text-center font-medium mb-6 text-white ${montserrat.className}`}
+      >
+        Our Featured Works
+      </h1>
 
-        <p className="text-gray-400 text-center mb-10 leading-relaxed">
-          Digital Marketing, Branding, Advertising & Creative Production —
-          everything your brand needs to grow and stand out.
-        </p>
+      <p className="text-gray-400 text-center mb-10 leading-relaxed max-w-3xl mx-auto">
+        Digital Marketing, Branding, Advertising & Creative Production —
+        everything your brand needs to grow and stand out.
+      </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:py-10 " >
-          {[
-            "Digital Marketing",
-            "Social Media Marketing",
-            "Personal Branding",
-            "Meta Ads (Facebook & Instagram)",
-            "Video Production",
-            "Video Editing",
-            "Poster Design",
-            "Logo Creation",
-            "Railway Ads",
-            "Theatre Ads",
-            "Radio Ads",
-            "Consultation",
-          ].map((item) => (
-            <div
-              key={item}
-              className="bg-[#111] text-gray-300 border border-gray-800 rounded-lg px-4 py-3 hover:border-gray-500 hover:text-white transition-all duration-300"
-            >
-              {item}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:py-10">
+        {[
+          "Digital Marketing",
+          "Social Media Marketing",
+          "Personal Branding",
+          "Meta Ads (Facebook & Instagram)",
+          "Video Production",
+          "Video Editing",
+          "Poster Design",
+          "Logo Creation",
+          "Railway Ads",
+          "Theatre Ads",
+          "Radio Ads",
+          "Consultation",
+        ].map((item) => (
+          <div
+            key={item}
+            className="bg-[#050615] text-gray-300 border border-gray-800 rounded-lg px-4 py-3 hover:border-gray-500 hover:text-white transition-all duration-300"
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Section 2 */}
+  <section className="py-16">
+    <div className="container mx-auto px-4 sm:px-6">
+      <h2 className="text-3xl font-semibold mb-10 text-black">
+        Our Works
+      </h2>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {works.map((work, index) => (
+          <div
+            key={index}
+            className="bg-[#111] text-white rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+          >
+            <div className="relative h-52 overflow-hidden">
+              {work.type === "video" ? (
+                <video
+                  src={work.image}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  className="object-cover"
+                />
+              )}
             </div>
-          ))}
-        </div>
-      </section>
 
-      <section className="mx-auto px-5 md:px-20 pb-20 py-10">
-        <h2 className="text-3xl font-semibold mb-10 text-black">
-          Our Works
-        </h2>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {works.map((work, index) => (
-            <div
-              key={index}
-              className="bg-[#111] text-white rounded overflow-hidden hover:scale-[1.02] transition-transform duration-300"
-            >
-              <div className="relative h-52 overflow-hidden">
-                {work.type === "video" ? (
-                  <video
-                    src={work.image}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    fill
-                    className="object-cover"
-                  />
-                )}
-              </div>
-
-              <div className="p-5">
-                <h3 className="text-lg font-semibold mb-2">
-                  {work.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {work.description}
-                </p>
-              </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold mb-2">
+                {work.title}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {work.description}
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
-    </main>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</main>
+
   );
 }

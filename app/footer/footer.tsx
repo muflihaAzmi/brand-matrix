@@ -29,11 +29,11 @@ function Footer() {
     },
   ];
   return (
-    <footer className="w-full bg-black text-white border-t">
-      <div className=" mx-auto md:px-24 px-5 py-14 md:mx-auto md:container">
-        <div className="flex flex-col md:flex-row justify-between gap-6">
+    <footer className="w-full bg-[#050615] text-white border-t">
+      <div className=" mx-auto px-5 py-5 md:mx-auto md:container">
+        <div className="flex flex-col md:flex-row justify-between gap-6 md:py-20 py-10">
           {/* Brand Section */}
-          <div className="flex flex-col gap-4 max-w-sm">
+          <div className="flex flex-col gap-4 max-w-sm ">
             {/* <Link href="/">
           <Image
             src="/brandlo.png"

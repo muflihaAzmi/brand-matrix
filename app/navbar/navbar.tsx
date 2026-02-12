@@ -19,7 +19,7 @@ export default function Navbar() {
   const router = useRouter();
 
   return (
-    <nav className={`bg-white w-full h-20 ${urbanist.className} shadow-sm`}>
+    <nav className={`relative z-50 bg-white w-full h-20 ${urbanist.className} shadow-sm`}>
       
       {/* SAME LIKE SECOND NAV */}
       <div className="container mx-auto px-4 sm:pl-2 pr-4 flex items-center justify-between h-full">
@@ -65,7 +65,7 @@ export default function Navbar() {
 
           <button
             onClick={() => router.push("/contact")}
-            className="group inline-flex items-center gap-2 rounded-xl  bg-gradient-to-r from-blue-600 to-red-600 text-white hover:bg-white hover:text-black border px-5 py-2.5 transition-all duration-300 shadow-sm"
+            className="group inline-flex items-center gap-2 rounded-xl  bg-gradient-to-r from-blue-600 to-red-600 text-white hover:bg-white border px-5 py-2.5 transition-all duration-300 shadow-sm"
           >
             <span className="font-medium">Contact Us</span>
             <MoveRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
@@ -83,7 +83,7 @@ export default function Navbar() {
         className={`
           md:hidden absolute left-0 w-full bg-white shadow-lg
           transition-all duration-300 ease-in-out
-          ${open ? "top-20 opacity-100" : "top-16 opacity-0 pointer-events-none"}
+          ${open ? "top-20 opacity-100" : "top-16 opacity-0 pointer-events-none "}
         `}
       >
         <div className="flex flex-col gap-6 px-6 py-8 text-black font-medium">
@@ -104,11 +104,11 @@ export default function Navbar() {
           </Link>
 
           <button
-            className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-t  from-blue-600/30 via-transparent to-red-600/20 hover:bg-white hover:text-black px-5 py-3 transition-colors duration-300"
             onClick={() => router.push("/contact")}
+            className="inline-flex items-center gap-2 rounded-xl  bg-gradient-to-r from-blue-600 to-red-600 text-white hover:bg-white border px-5 py-2.5 transition-all duration-300 shadow-sm"
           >
-            CONTACT US
-            <MoveRight className="w-4 h-4" />
+            <span className="font-medium">Contact Us</span>
+            <MoveRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
           </button>
         </div>
       </div>

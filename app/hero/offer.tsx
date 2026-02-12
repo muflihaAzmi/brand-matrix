@@ -161,7 +161,7 @@ function Offer() {
             />
 
             {/* Hover Glow Overlay */}
-            <div
+            <div 
               className="
                 absolute inset-0
                 bg-gradient-to-br from-blue-600/20 via-transparent to-red-600/20

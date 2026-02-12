@@ -25,7 +25,7 @@ const client = [
   },
   {
     title: "Business Revenue",
-    value: 2,
+    value: 3,
     suffix: "Cr+",
     desc: "Trusted by brands across industries.",
   },

@@ -72,7 +72,7 @@ const services = [
 
 export default function Page() {
   return (
-    <main className="py-14 md:py-20 relative">
+    <main className="py-14 md:py-20 relative overflow-hidden">
        <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
         <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-red-500/25 blur-[140px] rounded-full" />

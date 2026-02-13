@@ -78,11 +78,7 @@ function Clients() {
       ref={sectionRef}
       className="relative overflow-hidden border-b border-gray-200"
     >
-      {/* <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[-180px] left-[-180px] w-[450px] h-[450px] bg-blue-500/25 blur-[140px] rounded-full" />
-        <div className="absolute bottom-[-180px] right-[-180px] w-[450px] h-[450px] bg-red-500/25 blur-[140px] rounded-full" />
-        <div className="absolute top-[40%] left-[35%] w-[400px] h-[400px] bg-purple-500/15 blur-[160px] rounded-full" />
-      </div> */}
+   
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-20 md:py-40 px-4 sm:px-6 md:mx-auto md:container">
         {client.map((item, index) => {

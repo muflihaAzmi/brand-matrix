@@ -1,4 +1,5 @@
 "use client";
+import { z } from "zod";
 
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
@@ -11,34 +12,31 @@ export default function ContactPage() {
 
     emailjs
       .sendForm(
-        "service_w8wzmk6",
-        "template_alw6yv6",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         formRef.current!,
-        "J07hCOO_h0Ur7gPDl"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       )
       .then(() => {
         alert("Message sent successfully ");
         formRef.current?.reset();
       })
-      .catch(() => {
+      .catch(() => { 
         alert("Failed to send message ");
       });
   };
 
   return (
     <div className="min-h-screen w-full">
-      {/* FORM SECTION */}
       <div className="bg-white py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-
             {/* Contact Form */}
             <form
               ref={formRef}
               onSubmit={sendEmail}
               className="space-y-6 bg-white p-8 rounded shadow"
             >
-              {/* ✅ REQUIRED: receiver email */}
               <input
                 type="hidden"
                 name="to_email"
@@ -60,7 +58,7 @@ export default function ContactPage() {
                 <label className="block mb-2 text-sm font-medium">Email</label>
                 <input
                   type="email"
-                  name="email"   
+                  name="email"
                   required
                   placeholder="Email"
                   className="w-full border rounded-lg px-4 py-3"
@@ -108,7 +106,6 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-
           </div>
         </div>
       </div>

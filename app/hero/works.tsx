@@ -40,26 +40,22 @@ const works = [
 export default function WorksCarousel() {
   const [index, setIndex] = useState(0);
 
-  // Next Slide
   const nextSlide = () => {
     setIndex((prev) => (prev + 1) % works.length);
   };
 
-  // Previous Slide
   const prevSlide = () => {
     setIndex((prev) => (prev - 1 + works.length) % works.length);
   };
 
-  // Auto Slide Timer
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 4000); // 
+    }, 4000);  
 
     return () => clearInterval(timer);
   }, []);
 
-  // Visible 3 items
   const visibleWorks = [
     works[index],
     works[(index + 1) % works.length],
@@ -67,26 +63,8 @@ export default function WorksCarousel() {
   ];
 
   return (
+    
     <section className="relative overflow-hidden w-full py-24 px-6 md:px-20 text-white bg-[#050615]">
-      
-      <div className="absolute inset-0 -z-10">
-        {/* Gradient Base */}
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
-
-        {/* Blue Glow */}
-        {/* <div className="absolute top-[-200px] left-[-200px] w-[550px] h-[550px] bg-blue-600/30 blur-[170px] rounded-full" /> */}
-
-        {/* Red Glow */}
-        {/* <div className="absolute bottom-[-200px] right-[-200px] w-[550px] h-[550px] bg-red-600/30 blur-[170px] rounded-full" /> */}
-
-        {/* Purple Center Glow */}
-        {/* <div className="absolute top-[35%] left-[35%] w-[450px] h-[450px] bg-purple-600/20 blur-[200px] rounded-full" /> */}
-
-        {/* Soft Pattern */}
-        {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_60%)]" /> */}
-      </div>
-
-      {/* Heading */}
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
           <span className="bg-gradient-to-r from-blue-500 to-red-500 bg-clip-text text-transparent">
@@ -125,7 +103,6 @@ export default function WorksCarousel() {
                   transition-all duration-300
                 "
               >
-                {/* Image */}
                 <div className="relative h-60 overflow-hidden">
                   <Image
                     src={item.image}
@@ -134,11 +111,9 @@ export default function WorksCarousel() {
                     className="object-cover transition-transform duration-500 hover:scale-110"
                   />
 
-                  {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-red-600/10" />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-white">
                     {item.title}
@@ -155,7 +130,6 @@ export default function WorksCarousel() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Buttons */}
         <button
           onClick={prevSlide}
           className="absolute top-1/2 left-2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition"
@@ -171,7 +145,6 @@ export default function WorksCarousel() {
         </button>
       </div>
 
-      {/* Dots */}
       <div className="flex justify-center gap-2 mt-10">
         {works.map((_, i) => (
           <button

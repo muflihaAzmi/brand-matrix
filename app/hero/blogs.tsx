@@ -84,10 +84,6 @@ function Blogs() {
 
   return (
     <section className="relative overflow-hidden md:py-42 py-16 px-4 sm:px-6 flex flex-col md:flex-row gap-16 text-white">
-      
-      {/* 🔥 Dark Base Background */}
-      {/* <div className="absolute inset-0 -z-20 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
-
       {/* Glow Theme */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
@@ -95,12 +91,9 @@ function Blogs() {
         <div className="absolute top-[35%] left-[30%] w-[450px] h-[450px] bg-purple-500/15 blur-[160px] rounded-full" />
       </div>
 
-      {/* Soft Pattern */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_65%)]" />
 
       <div className="flex flex-col md:flex-row gap-16 md:mx-auto md:container w-full">
-        
-        {/* 🔹 LEFT CONTENT */}
         <motion.div
           variants={leftContainer}
           initial="hidden"
@@ -117,7 +110,7 @@ function Blogs() {
 
           <motion.h2
             variants={leftItem}
-            className="text-4xl md:text-5xl text-gray-800 font-semibold tracking-tight "
+            className="text-4xl md:text-5xl text-gray-800 font-semibold tracking-tight"
           >
             Insights From Our Digital Team
           </motion.h2>
@@ -156,7 +149,6 @@ function Blogs() {
           </motion.button>
         </motion.div>
 
-        {/* 🔹 BLOG LIST */}
         <motion.div
           variants={blogContainer}
           initial="hidden"

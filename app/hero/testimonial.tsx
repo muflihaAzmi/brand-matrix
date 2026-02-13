@@ -83,20 +83,16 @@ function VideoTestimonials() {
   return (
     <section className="relative overflow-hidden w-full py-20 md:py-40 px-4 md:px-10 text-white">
       
-      {/* 🔥 Dark Base Background */}
-      {/* <div className="absolute inset-0 -z-20 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
+     
 
-      {/* Glow Blobs (Your Theme) */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
         <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-red-500/25 blur-[140px] rounded-full" />
         <div className="absolute top-[35%] left-[30%] w-[450px] h-[450px] bg-purple-500/15 blur-[160px] rounded-full" />
       </div>
 
-      {/* Soft Pattern */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_65%)]" />
 
-      {/* 🔹 HEADING */}
       <motion.div
         variants={headingContainer}
         initial="hidden"
@@ -128,7 +124,6 @@ function VideoTestimonials() {
         </motion.p>
       </motion.div>
 
-      {/* 🔹 VIDEO GRID */}
       <motion.div
         variants={gridContainer}
         initial="hidden"
@@ -153,7 +148,6 @@ function VideoTestimonials() {
               p-4
             "
           >
-            {/* Video */}
             <div className="h-55 md:h-95 rounded-xl overflow-hidden">
               <video
                 src={item.video}
@@ -163,7 +157,6 @@ function VideoTestimonials() {
               />
             </div>
 
-            {/* Text */}
             <div className="px-1">
               <h3 className="text-gray-800 text-lg font-semibold tracking-tight">
                 {item.name}
@@ -176,7 +169,6 @@ function VideoTestimonials() {
         ))}
       </motion.div>
 
-      {/* 🔹 CTA */}
       <motion.section
         variants={ctaVariant}
         initial="hidden"

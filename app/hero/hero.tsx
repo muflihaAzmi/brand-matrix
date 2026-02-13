@@ -50,7 +50,6 @@ function Hero() {
 
   return (
 <section className="w-full md:py-30 py-10 relative overflow-hidden">
-  {/* Background Effects */}
 
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-blue-500/25 blur-[140px] rounded-full" />
@@ -59,7 +58,6 @@ function Hero() {
       </div>
       <div className="flex flex-col lg:flex-row justify-between md:gap-10 mx-auto container px-4 sm:px-6">
         
-        {/* LEFT CONTENT */}
         <motion.div
           variants={leftContainer}
           initial="hidden"
@@ -86,7 +84,6 @@ function Hero() {
               <span className="text-red-600">Powerful</span> Digital Brands
             </motion.span>
 
-            {/* Paragraph */}
             <motion.p
               variants={leftItem}
               className="text-gray-700 max-w-xl text-base md:text-lg"
@@ -133,7 +130,6 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT GRID */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -141,7 +137,6 @@ function Hero() {
           variants={leftContainer}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-xl py-8"
         >
-          {/* Image 1 */}
           <motion.div
             variants={RightItem}
             className="rounded-xl overflow-hidden h-55 sm:h-65 md:h-80 lg:h-145 relative"
@@ -152,19 +147,16 @@ function Hero() {
               alt="hero"
             />
 
-            {/* overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-blue-600/30 via-transparent to-red-600/20" />
           </motion.div>
 
-          {/* Right side column */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={leftContainer}
-            className="grid grid-rows-2 gap-4 lg:h-145"
+            className="grid grid-rows-2 gap-4  "
           >
-            {/* Testimonial */}
             <motion.div
               variants={RightItem}
               className="
@@ -187,7 +179,6 @@ function Hero() {
               </div>
             </motion.div>
 
-            {/* Image 2 */}
             <motion.div
               variants={RightItem}
               className="rounded-xl overflow-hidden relative"
@@ -198,7 +189,6 @@ function Hero() {
                 alt="video"
               />
 
-              {/* overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-red-600/30 via-transparent to-blue-600/20" />
             </motion.div>
           </motion.div>

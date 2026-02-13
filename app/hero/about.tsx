@@ -64,7 +64,6 @@ function About() {
 <div className="container mx-auto">
 
 
-      {/* Small label */}
       <motion.span
         variants={leftItem}
         initial="hidden"
@@ -77,7 +76,6 @@ function About() {
 
       <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6">
         
-        {/* 🔹 LEFT CONTENT */}
         <motion.div
           variants={leftContainer}
           initial="hidden"
@@ -85,7 +83,6 @@ function About() {
           viewport={{ once: false, margin: "-120px" }}
           className="flex flex-col md:gap-20 gap-12 max-w-3xl"
         >
-          {/* Heading & Description */}
           <div className="flex flex-col gap-6">
             
             {/* Heading */}
@@ -98,7 +95,6 @@ function About() {
               </span>
             </motion.h2>
 
-            {/* Paragraph 1 */}
             <motion.p
               variants={leftItem}
               className="text-gray-700 max-w-2xl text-base md:text-lg leading-relaxed"
@@ -110,7 +106,6 @@ function About() {
               delivering creative strategies that turn ideas into impact.
             </motion.p>
 
-            {/* Paragraph 2 */}
             <motion.p
               variants={leftItem}
               className="text-gray-700 max-w-2xl text-base md:text-lg leading-relaxed"
@@ -127,7 +122,6 @@ function About() {
             </motion.p>
           </div>
 
-          {/* What We Do */}
           <motion.div
             variants={leftItem}
             className="max-w-xl bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-md border border-blue-100"
@@ -160,7 +154,6 @@ function About() {
           </motion.div>
         </motion.div>
 
-        {/* 🔹 IMAGE */}
         <motion.div
           variants={imageVariant}
           initial="hidden"

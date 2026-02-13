@@ -4,21 +4,16 @@ import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
-/* =======================
-   DATA
-======================= */
+
 
 const photos = [
   { image: "/marketing.jpg", title: "Digital Marketing" },
-  { image: "/logobrand.avif", title: "Logo & Design" },
-  { image: "/videomarketting.jpg", title: "Video Marketing" },
-  { image: "/brand.webp", title: "Brand Strategy" },
-  { image: "/ad.webp", title: "Paid Advertising" },
+  { image: "/newlogodes.jpg", title: "Logo & Design" },
+  { image: "/videomaking.jpg", title: "Video Marketing" },
+  { image: "/branding.avif", title: "Brand Strategy" },
+  { image: "/addds.jpg", title: "Paid Advertising" },
 ];
 
-/* =======================
-   HEADING ANIMATIONS
-======================= */
 
 const headingContainer: Variants = {
   hidden: {},
@@ -41,9 +36,7 @@ const headingItem: Variants = {
   },
 };
 
-/* =======================
-   GRID ANIMATIONS
-======================= */
+
 
 const gridContainer: Variants = {
   hidden: {},
@@ -70,18 +63,12 @@ const gridItem: Variants = {
 function Offer() {
   return (
     <section className="relative overflow-hidden flex flex-col md:gap-20 gap-10 py-16 md:py-40 w-full md:px-10 px-4 text-white">
-      
-      {/* 🔥 Premium Background */}
-      {/* <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#040b24] via-[#060617] to-[#240404]" /> */}
-
-      {/* Glow Blobs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-220px] left-[-220px] w-[520px] h-[520px] bg-blue-600/25 blur-[170px] rounded-full" />
         <div className="absolute bottom-[-220px] right-[-220px] w-[520px] h-[520px] bg-red-600/25 blur-[170px] rounded-full" />
         <div className="absolute top-[35%] left-[35%] w-[450px] h-[450px] bg-purple-600/15 blur-[200px] rounded-full" />
       </div>
 
-      {/* 🔹 HEADING */}
       <motion.div
         variants={headingContainer}
         initial="hidden"
@@ -107,7 +94,7 @@ function Offer() {
 
         <motion.p
           variants={headingItem}
-          className="text-center max-w-xl text-gray-300 leading-relaxed"
+          className="text-center max-w-xl text-gray-800 leading-relaxed"
         >
           We help brands stand out in the digital world through strategic
           marketing, creative storytelling, and performance-focused campaigns
@@ -115,13 +102,12 @@ function Offer() {
         </motion.p>
       </motion.div>
 
-      {/* 🔹 GRID */}
       <motion.div
         variants={gridContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, margin: "-120px" }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:px-10 md:mx-auto md:container"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 md:px-5 md:mx-auto md:container"
       >
         {photos.map((item, index) => (
           <motion.div
@@ -137,7 +123,6 @@ function Offer() {
               hover:border-blue-500/40
             "
           >
-            {/* Image */}
             <Image
               src={item.image}
               alt={item.title}
@@ -151,16 +136,13 @@ function Offer() {
               "
             />
 
-            {/* Overlay */}
             <div
               className="
                 absolute inset-0
-                bg-gradient-to-t from-black/70 via-black/20 to-transparent
-                opacity-80
+                bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80
               "
             />
 
-            {/* Hover Glow Overlay */}
             <div 
               className="
                 absolute inset-0
@@ -170,7 +152,6 @@ function Offer() {
               "
             />
 
-            {/* Title */}
             <div
               className="
                 absolute bottom-5 left-5 right-5

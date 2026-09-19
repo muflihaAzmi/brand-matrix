@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Brand Matrix Agency",
     description:
       "Corporate branding and creative marketing agency delivering impactful brand growth.",
-    url: "https://brand-matrix-psi.vercel.app/",
+     url: "https://www.brandmatrix.agency",
     siteName: "Brand Matrix Agency",
     images: [
       {
